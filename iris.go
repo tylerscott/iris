@@ -290,10 +290,6 @@ func (s *Framework) initialize() {
 		s.Handle(MethodGet, debugPath+"/*action", profileMiddleware(debugPath)...)
 	}
 
-	// ssh
-	if s.SSH != nil && s.SSH.Enabled() {
-		s.SSH.bindTo(s)
-	}
 }
 
 func (s *Framework) acquireCtx(reqCtx *fasthttp.RequestCtx) *Context {
